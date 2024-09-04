@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online Calculator</title>
+    <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+    <div class="container">
+       <input type="text" id="result" >
+        <div class="sub-container">
+            <div class="numbers">
+                <button class="boxs" onclick="appendValue('0')">0</button>
+                <button class="boxs" onclick="appendValue('1')">1</button>
+                <button class="boxs" onclick="appendValue('2')">2</button>
+                <button class="boxs" onclick="appendValue('3')">3</button>
+                <button class="boxs" onclick="appendValue('4')">4</button> 
+                <button class="boxs" onclick="appendValue('5')">5</button>
+                <button class="boxs" onclick="appendValue('6')">6</button>
+                <button class="boxs" onclick="appendValue('7')">7</button>
+                <button class="boxs" onclick="appendValue('8')">8</button>
+                <button class="boxs" onclick="appendValue('9')">9</button>
+                <button class="boxs" onclick="calculator()">=</button>    
+            <div class="signs">
+                <button class="math" onclick="appendValue('+')">+</button>
+                <button class="math" onclick="appendValue('-')">-</button>
+                <button class="math" onclick="appendValue('/')">/</button>
+                <button class="math" onclick="clearResult()">ON</button>
+                <button class="math" onclick="clearResult()">OFF</button>
+            </div>
+        </div>
+    </div>
+    <script>
+       function appendValue(value){
+        let resultfield = document.getElementById('result');
+        resultfield.value += value; 
+       }
+       function calculator(){
+        let resultfield = document.getElementById('result');
+        resultfield.value = eval(resultfield.value);
+       }
+       function clearResult(){
+        let resultfield = document.getElementById('result');
+        resultfield.value = '';
+       }
+
+    </script>
+</body>
+</html>
